@@ -1,0 +1,57 @@
+--[[
+	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
+]]
+game:GetService("StarterGui"):SetCore("SendNotification",{
+Title = "📜Script Already active 📜",
+Text = "create by giang_lao889", 
+Duration = 3
+})
+local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+
+local PhantomForcesWindow = Library:NewWindow("[Free spins!]Free spin🤑")
+
+local KillingCheats = PhantomForcesWindow:NewSection("main")
+
+-- Create a TextBox and convert input to a number
+KillingCheats:CreateTextbox("Nhập Số credits", function(text)
+    -- Try to convert input to a number
+    local numberInput = tonumber(text)
+    
+    if numberInput then
+        print("Input number:", numberInput)
+        
+        -- Fire event with the number input
+        local args = {
+            [1] = numberInput, -- Use the number here
+            [2] = 1
+        }
+        
+        game:GetService("ReplicatedStorage").Events.Spin:FireServer(unpack(args))
+    else
+        print("Invalid input, please enter a number.")
+    end
+end)
+KillingCheats:CreateTextbox("Nhập Số spin", function(text)
+    -- Try to convert input to a number
+    local numberInput = tonumber(text)
+    
+    if numberInput then
+        print("Input number:", numberInput)
+        
+        -- Fire event with the number input
+        local args = {
+    [1] = "Spins",
+    [2] = numberInput,
+}
+
+game:GetService("ReplicatedStorage").Events.PlayTimeGifts:FireServer(unpack(args))
+
+    else
+        print("Invalid input, please enter a number.")
+    end
+end)
+local KillingCheats = PhantomForcesWindow:NewSection("by create giang_lao889")
+
+KillingCheats:CreateButton("By Create giang_lao889", function()
+print("HI")
+end)
